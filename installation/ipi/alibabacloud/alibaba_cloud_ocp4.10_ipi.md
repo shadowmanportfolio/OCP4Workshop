@@ -24,7 +24,7 @@
 
 总体架构和基于裸金属安装方式类似，在集群创建过程中或之后，可以配置公共或私有网络连接。本次安装验证通过互联网络访问的集群。
 
-<img src="assets/01.JPG" alt="架构" style="zoom: 67%;" />
+<img src="assets/01.jpg" alt="架构" style="zoom: 67%;" />
 
 ## 依赖条件
 
@@ -223,29 +223,29 @@ time="2022-02-07T00:33:09+08:00" level=info msg="Time elapsed: 31m17s"
 
 登录阿里云控制台，可以看到三个master和两个worker节点均匀分散在张家口区域中的三个可用区。
 
-<img src="assets/02.JPG" style="zoom: 50%;" />
+<img src="assets/02.jpg" style="zoom: 50%;" />
 
 集群专用资源组以及OpenShift相关的资源被安装器创建出来。
 
-<img src="assets/03.JPG" style="zoom: 50%;" />
+<img src="assets/03.jpg" style="zoom: 50%;" />
 
 ### 集群检查
 
 将安装完成时提示的OpenShift控制台URL地址输入浏览器，用默认用户和口令登录和管理集群。
 
-<img src="assets/04.JPG" style="zoom: 25%;" />
+<img src="assets/04.jpg" style="zoom: 25%;" />
 
 在计算->节点菜单中，我们可以看到集群节点列表，master的实例类型是ecs.g6.xlarge，worker的实例类型是ecs.g6.large。
 
-![](assets/05.JPG)
+![](assets/05.jpg)
 
 在计算->机器页面中，我们可以看到机器分布在不同的可用区。
 
-![](assets/06.JPG)
+![](assets/06.jpg)
 
 在管理->集群设置->集群Operator页面中，可以观察到所有的Operator都是Available状态。
 
-![](assets/07.JPG)
+![](assets/07.jpg)
 
 ## 节点扩缩容验证
 
@@ -253,25 +253,25 @@ time="2022-02-07T00:33:09+08:00" level=info msg="Time elapsed: 31m17s"
 
 集群可以快速进行扩缩容，只需要在OpenShift控制台修改计算->机器集页面中相应可用区的机器集的Desired count（所需机器数量）。现在把b区数量由0改为1来增加一个节点。
 
-<img src="assets/08.JPG" style="zoom:40%;" />
+<img src="assets/08.jpg" style="zoom:40%;" />
 
 我们在AWS控制台上，稍后就可以看到b区新的实例被创建起来了。
 
-![](assets/09.JPG)
+![](assets/09.jpg)
 
 几分钟后，机器所处的阶段由Provisioned变为Provisioned as node（置备为节点），节点状态也变成Ready表明扩容完成。
 
-![](assets/10.JPG)
+![](assets/10.jpg)
 
-![](assets/11.JPG)
+![](assets/11.jpg)
 
-<img src="assets/12.JPG" style="zoom: 50%;" />
+<img src="assets/12.jpg" style="zoom: 50%;" />
 
 ### 缩容
 
 接下来，把b区数量由1改回为0来减少一个节点。即将被销毁的节点先会标记为调度被禁用，经过二三分钟，此节点就会被自动删除。
 
-![](assets/13.JPG)
+![](assets/13.jpg)
 
 
 
