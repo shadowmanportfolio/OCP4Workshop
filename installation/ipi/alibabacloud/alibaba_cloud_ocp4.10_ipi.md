@@ -114,7 +114,7 @@ ssh-keygen -t rsa -b 4096 -N '' -f ~/.ssh/id_rsa
 
 #### 生成安装配置文件
 
-选择alibaba平台，按照提示依次填写Region、Base Domain（基础域名）、Cluster Name（集群名）、Pull Secret。其中Region参数可以先随便选一个。如下图所于，如果基础域名是test.arm.rhtsec.com，集群名是ocp49，那么集群访问URL中的域名将是以ocp49.test.arm.rhtsec.com作为主域名。
+选择alibaba平台，按照提示依次填写Region、Base Domain（基础域名）、Cluster Name（集群名）、Pull Secret。其中Region参数可以选中国区域，比如张家口。如果基础域名是rhtsec.com，集群名是ocp410，那么集群访问URL中的域名将是以ocp410.rhtsec.com作为主域名。
 
 ```shell
 mkdir install-dir
