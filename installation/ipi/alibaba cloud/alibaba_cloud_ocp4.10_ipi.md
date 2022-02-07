@@ -105,7 +105,6 @@ Use "ccoctl alibabacloud [command] --help" for more information about a command.
 ### 生成登录密钥
 
 ```shell
-cd
 ssh-keygen -t rsa -b 4096 -N '' -f ~/.ssh/id_rsa
 ```
 
