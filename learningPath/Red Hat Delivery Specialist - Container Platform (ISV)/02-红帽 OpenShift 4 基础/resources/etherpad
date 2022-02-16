@@ -1,0 +1,1 @@
+FROM quay.io/wkulhanek/etherpad:1.8.4
