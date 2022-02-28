@@ -26,7 +26,7 @@ oc new-app --template=postgresql-persistent --param POSTGRESQL_USER=ether --para
 sleep 15
 
 # From Github Repo
-oc new-app -f https://raw.githubusercontent.com/shadowmanportfolio/OCP4Workshop/master/learningPath/Red%20Hat%20Delivery%20Specialist%20-%20Container%20Platform%20(ISV)/02-%E7%BA%A2%E5%B8%BD%20OpenShift%204%20%E5%9F%BA%E7%A1%80/resources/etherpad-template.yaml -p DB_TYPE=postgres -p DB_HOST=postgresql -p DB_PORT=5432 -p DB_DATABASE=etherpad -p DB_USER=ether -p DB_PASS=ether -p ETHERPAD_IMAGE=quay.io/samzhu/etherpad:latest -p ADMIN_PASSWORD=secret
+oc new-app -f 'https://raw.githubusercontent.com/shadowmanportfolio/OCP4Workshop/master/learningPath/Red%20Hat%20Delivery%20Specialist%20-%20Container%20Platform%20(ISV)/02-%E7%BA%A2%E5%B8%BD%20OpenShift%204%20%E5%9F%BA%E7%A1%80/resources/etherpad-template.yaml' -p DB_TYPE=postgres -p DB_HOST=postgresql -p DB_PORT=5432 -p DB_DATABASE=etherpad -p DB_USER=ether -p DB_PASS=ether -p ETHERPAD_IMAGE=quay.io/samzhu/etherpad:latest -p ADMIN_PASSWORD=secret
 
 # From a cloned repo
 # oc new-app -f ./etherpad-template.yaml -p DB_TYPE=postgres -p DB_HOST=postgresql -p DB_PORT=5432 -p DB_DATABASE=etherpad -p DB_USER=ether -p DB_PASS=ether -p ETHERPAD_IMAGE=quay.io/samzhu/etherpad:latest -p ADMIN_PASSWORD=secret
@@ -38,8 +38,8 @@ oc new-app -f https://raw.githubusercontent.com/shadowmanportfolio/OCP4Workshop/
 部署mongodb模板，因此此模板在4.6之后都被弃用了，Demo应用要用的话需要手工安装。
 
 ```shell
-oc create -f https://raw.githubusercontent.com/shadowmanportfolio/OCP4Workshop/master/learningPath/Red%20Hat%20Delivery%20Specialist%20-%20Container%20Platform%20(ISV)/02-%E7%BA%A2%E5%B8%BD%20OpenShift%204%20%E5%9F%BA%E7%A1%80/resources/mongodb-template.yaml -n openshift
-oc create -f https://raw.githubusercontent.com/shadowmanportfolio/OCP4Workshop/master/learningPath/Red%20Hat%20Delivery%20Specialist%20-%20Container%20Platform%20(ISV)/02-%E7%BA%A2%E5%B8%BD%20OpenShift%204%20%E5%9F%BA%E7%A1%80/resources/mongodb-persistent-template.json -n openshift
+oc create -f 'https://raw.githubusercontent.com/shadowmanportfolio/OCP4Workshop/master/learningPath/Red%20Hat%20Delivery%20Specialist%20-%20Container%20Platform%20(ISV)/02-%E7%BA%A2%E5%B8%BD%20OpenShift%204%20%E5%9F%BA%E7%A1%80/resources/mongodb-template.yaml' -n openshift
+oc create -f 'https://raw.githubusercontent.com/shadowmanportfolio/OCP4Workshop/master/learningPath/Red%20Hat%20Delivery%20Specialist%20-%20Container%20Platform%20(ISV)/02-%E7%BA%A2%E5%B8%BD%20OpenShift%204%20%E5%9F%BA%E7%A1%80/resources/mongodb-persistent-template.json' -n openshift
 
 ```
 
